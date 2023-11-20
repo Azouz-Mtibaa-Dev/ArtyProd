@@ -1,0 +1,61 @@
+{% extends 'artyweb/base.html' %}
+{% block title %} Detail Projet {% endblock %}
+{% load static %}
+{% block content %}
+ <!-- ---------------------- Site Content -------------------------->
+ <style>
+    .post-content .post-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+    }
+</style>
+ <section class="container">
+    <div class="site-content">
+        <div class="posts">
+            <div class="post-content" data-aos="zoom-in" data-aos-delay="100">
+                <h2>{{projet.libelle}} details:</h2>
+                <div class="post-image">
+                    <div>
+                        <img src="{{ projet.image.url }}"  class="img" >
+                    </div>
+                    
+                </div>
+                <div class="post-title">
+                    <p> {{ projet.description }} </p>
+                </div>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+             <div class="category"><br>
+                <br><br><br><br><br>
+                <ul class="category-list">
+                    <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                        <a href="#">Date début: {{ projet.date_debut}}</a>
+                    </li>
+                    <li class="list-items" data-aos="fade-left" data-aos-delay="200">
+                        <a href="#">Date fin: {{ projet.date_fin }}</a>
+                        
+                    </li>
+                    
+                    <li class="list-items" data-aos="fade-left" data-aos-delay="300">
+                        <a href="#">Nom de service: {{ projet.service }}</a>
+                    </li>
+                    <li class="list-items" data-aos="fade-left" data-aos-delay="400">
+                        <a href="#">Client : {{ projet.demandeur }}</a>
+                    </li>
+                    <li class="list-items" data-aos="fade-left" data-aos-delay="500">
+                        <a href="#">Equipe réalise : {{ projet.equipe}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>  
+        </aside>
+    </div>
+</section>
+
+<!-- -----------x---------- Site Content -------------x------------>
+
+{% endblock %}
